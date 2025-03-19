@@ -75,17 +75,17 @@ export const Ammos = new ObjectDefinitions<AmmoDefinition>([
         defaultCasingFrame: "casing_9x19mm"
     },
     {
-        idString: "50cal",
-        name: ".50 Cal",
+        idString: "4g",
+        name: "4 gauge",
         itemType: ItemType.Ammo,
-        maxStackSize: 9,
-        minDropAmount: 3,
+        maxStackSize: 10,
+        minDropAmount: 2,
         characteristicColor: {
             hue: 0,
-            saturation: 0,
-            lightness: 0
+            saturation: 100,
+            lightness: 75
         },
-        defaultCasingFrame: "casing_50bmg",
+        defaultCasingFrame: "casing_4ga_325in",
         hideUnlessPresent: true
     },
     {
@@ -100,6 +100,20 @@ export const Ammos = new ObjectDefinitions<AmmoDefinition>([
             lightness: 75
         },
         defaultCasingFrame: "casing_338lap",
+        hideUnlessPresent: true
+    },
+    {
+        idString: "50cal",
+        name: ".50 Cal",
+        itemType: ItemType.Ammo,
+        maxStackSize: 9,
+        minDropAmount: 3,
+        characteristicColor: {
+            hue: 0,
+            saturation: 0,
+            lightness: 0
+        },
+        defaultCasingFrame: "casing_50bmg",
         hideUnlessPresent: true
     },
     {
