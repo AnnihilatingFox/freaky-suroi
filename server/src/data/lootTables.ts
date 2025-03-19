@@ -444,6 +444,7 @@ export const LootTables: Record<Mode, Record<string, LootTable>> = {
                 { item: NullString, weight: 1 },
                 { item: "50cal", count: 20, weight: 0.3 },
                 { item: "338lap", count: 6, weight: 0.1 },
+                { item: "4g", count: 4, weight: 0.1 },
                 { item: "curadell", weight: 0.1 }
             ]
         ],
@@ -726,6 +727,7 @@ export const LootTables: Record<Mode, Record<string, LootTable>> = {
             { item: "mg5", weight: 1 },
             { item: "mk18", weight: 0.5 },
             { item: "l115a1", weight: 0.5 },
+            { item: "ks23m", weight: 0.5 },
             { item: "dual_rsh12", weight: 0.5 },
             { item: "g19", weight: 0.0005 }
         ],
@@ -1043,10 +1045,9 @@ export const LootTables: Record<Mode, Record<string, LootTable>> = {
             { item: "mosin_nagant", weight: 0.0133 },
 
             // 2% chance for one of these
-            { item: "tango_51", weight: 0.005 },
-            { item: "model_89", weight: 0.005 },
-            { item: "vepr12", weight: 0.005 },
-            { item: "rgs", weight: 0.005 },
+            { item: "tango_51", weight: 0.0066 },
+            { item: "model_89", weight: 0.0066 },
+            { item: "vepr12", weight: 0.0066 },
 
             // very rare shit
             { item: "rsh12", weight: 0.001 },
@@ -1076,10 +1077,9 @@ export const LootTables: Record<Mode, Record<string, LootTable>> = {
             { item: "mosin_nagant", weight: 0.033 },
 
             // 5% chance for one of these
-            { item: "tango_51", weight: 0.0125 },
-            { item: "model_89", weight: 0.0125 },
-            { item: "vepr12", weight: 0.0125 },
-            { item: "rgs", weight: 0.0125 },
+            { item: "tango_51", weight: 0.0166 },
+            { item: "model_89", weight: 0.0166 },
+            { item: "vepr12", weight: 0.0166 },
 
             // 1% chance for one of these
             { item: "m590m", weight: 0.002 },
@@ -1408,10 +1408,9 @@ export const LootTables: Record<Mode, Record<string, LootTable>> = {
             { item: "mosin_nagant", weight: 0.0133 },
 
             // 2% chance for one of these
-            { item: "tango_51", weight: 0.005 },
-            { item: "model_89", weight: 0.005 },
-            { item: "vepr12", weight: 0.005 },
-            { item: "rgs", weight: 0.005 },
+            { item: "tango_51", weight: 0.0066 },
+            { item: "model_89", weight: 0.0066 },
+            { item: "vepr12", weight: 0.0066 },
 
             // very rare shit
             { item: "rsh12", weight: 0.001 },
@@ -1441,10 +1440,9 @@ export const LootTables: Record<Mode, Record<string, LootTable>> = {
             { item: "mosin_nagant", weight: 0.033 },
 
             // 5% chance for one of these
-            { item: "tango_51", weight: 0.0125 },
-            { item: "model_89", weight: 0.0125 },
-            { item: "vepr12", weight: 0.0125 },
-            { item: "rgs", weight: 0.0125 },
+            { item: "tango_51", weight: 0.0166 },
+            { item: "model_89", weight: 0.0166 },
+            { item: "vepr12", weight: 0.0166 },
 
             // 1% chance for one of these
             { item: "m590m", weight: 0.002 },
