@@ -209,10 +209,10 @@ export const TintedParticles: Record<string, { readonly base: string, readonly t
     metal_particle:                { base: "metal_particle_1", tint: 0x5f5f5f },
     metal_column_particle:         { base: "metal_particle_1", tint: 0x8f8f8f },
     super_barrel_particle:         { base: "metal_particle_1", tint: 0xce2b29 },
-    fire_barrel_particle:          { base: "metal_particle_1", tint: 0x999999 },
     propane_tank_particle:         { base: "metal_particle_1", tint: 0xb08b3f },
     dumpster_particle:             { base: "metal_particle_1", tint: 0x3c7033 },
-    washing_machine_particle:      { base: "metal_particle_1", tint: 0xcccccc },
+    washing_machine_particle:      { base: "metal_particle_1", tint: 0xb3b3b3 },
+    fridge_particle:               { base: "metal_particle_1", tint: 0x666666 },
     tv_particle:                   { base: "metal_particle_1", tint: 0x333333 },
     smokestack_particle:           { base: "metal_particle_1", tint: 0xb5b5b5 },
     distillation_column_particle:  { base: "metal_particle_1", tint: 0x1b5e98 },
@@ -231,7 +231,7 @@ export const TintedParticles: Record<string, { readonly base: string, readonly t
     aegis_crate_particle:          { base: "wood_particle",    tint: 0x2687d9 },
     airdrop_crate_particle:        { base: "wood_particle",    tint: aidrTint },
     chest_particle:                { base: "wood_particle",    tint: 0xa87e5a },
-    cooler_particle:               { base: "wood_particle",    tint: 0x406c65 },
+    cooler_particle:               { base: "wood_particle",    tint: 0x357d99 },
     crate_particle:                { base: "wood_particle",    tint: 0x9e7437 },
     memorial_crate_particle:       { base: "wood_particle",    tint: 0x763800 },
     flint_crate_particle:          { base: "wood_particle",    tint: 0xda6a0b },
@@ -667,7 +667,7 @@ const rshCase = (idString: string): RawObstacleDefinition => ({
     idString,
     name: "RSh-12 Case",
     material: "crate",
-    health: 200,
+    health: 80,
     hitbox: new GroupHitbox(
         RectangleHitbox.fromRect(8.5, 5.5),
         RectangleHitbox.fromRect(1.3, 6, Vec.create(-2.7, 0)),
@@ -1597,6 +1597,7 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(([
             destroy: 0.5
         },
         spawnMode: MapObjectSpawnMode.GrassAndSand,
+
         hitbox: new CircleHitbox(3.75),
         rotationMode: RotationMode.Full,
         explosion: "barrel_explosion",
@@ -1642,22 +1643,6 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(([
             particle: "propane_tank_particle",
             residue: "explosion_decal"
         }
-    },
-    {
-        idString: "fire_barrel",
-        name: "Fire Barrel",
-        material: "metal_light",
-        health: 200,
-        scale: {
-            spawnMin: 1,
-            spawnMax: 1,
-            destroy: 0.5
-        },
-        spawnMode: MapObjectSpawnMode.GrassAndSand,
-        hitbox: new CircleHitbox(3.75),
-        rotationMode: RotationMode.Full,
-        explosion: "barrel_explosion",
-        reflectBullets: true,
     },
     {
         idString: "loot_barrel",
@@ -1969,7 +1954,7 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(([
         rotationMode: RotationMode.Limited,
         allowFlyover: FlyoverPref.Never,
         frames: {
-            particle: "metal_particle"
+            particle: "fridge_particle"
         },
         reflectBullets: true
     },
@@ -3052,24 +3037,6 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(([
         }
     },
     {
-        idString: "garage_door",
-        name: "Garage Door",
-        material: "wood",
-        health: 200,
-        scale: {
-            spawnMin: 1,
-            spawnMax: 1,
-            destroy: 0.95
-        },
-        hideOnMap: true,
-        hitbox: RectangleHitbox.fromRect(21.7, 1.5, Vec.create(0, -0.4)),
-        rotationMode: RotationMode.Limited,
-        allowFlyover: FlyoverPref.Never,
-        frames: {
-            particle: "furniture_particle"
-        }
-    },
-    {
         idString: "porta_potty_toilet_open",
         name: "Porta Potty Toilet Open",
         material: "porcelain",
@@ -3475,7 +3442,9 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(([
             names: ["button_press", "puzzle_solved"]
         },
         frames: {
-            activated: "control_panel_activated"
+            activated: "control_panel_activated",
+            particle: "metal_particle",
+            residue: "barrel_residue"
         }
     },
     controlPanel("control_panel2", "Control Panel"),
@@ -3491,7 +3460,8 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(([
         },
         frames: {
             activated: "recorder_used",
-            particle: "metal_particle"
+            particle: "metal_particle",
+            residue: "barrel_residue"
         }
     },
     {
