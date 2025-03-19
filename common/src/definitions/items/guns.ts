@@ -536,7 +536,7 @@ export const Guns = new InventoryItemDefinitions<GunDefinition>(([
         }],
         gasParticles: gasParticlePresets.automatic,
         ballistics: {
-            damage: 14,
+            damage: 15,
             obstacleMultiplier: 1,
             speed: 0.25,
             range: 100
@@ -559,7 +559,7 @@ export const Guns = new InventoryItemDefinitions<GunDefinition>(([
             shotSpread: 3,
             moveSpread: 6,
             capacity: 40,
-            reloadTime: 3.2
+            reloadTime: 3.0
         }
     },
 
@@ -1518,8 +1518,8 @@ export const Guns = new InventoryItemDefinitions<GunDefinition>(([
             allowRangeOverride: true,
             tracer: {
                 length: 0.5,
-                color: 0xFF0000,
-                saturatedColor: 0xF55C3D
+                color: 0x80ff80,
+                saturatedColor: 0x00e700
             }
         }
     },
@@ -1551,6 +1551,7 @@ export const Guns = new InventoryItemDefinitions<GunDefinition>(([
         },
         image: { position: Vec.create(78, 2) },
         casingParticles: [{
+            frame: "casing_12ga_he",
             position: Vec.create(3.9, 0.6)
         }],
         gasParticles: gasParticlePresets.shotgun,
@@ -1559,8 +1560,13 @@ export const Guns = new InventoryItemDefinitions<GunDefinition>(([
             obstacleMultiplier: 1,
             speed: 0.16,
             range: 48,
+            onHitExplosion: "usas_explosion",
+            explodeOnImpact: true,
+            allowRangeOverride: true,
             tracer: {
-                length: 0.5
+                length: 0.5,
+                color: 0xffc8c8,
+                saturatedColor: 0xFF0000
             }
         }
     },
@@ -1654,6 +1660,99 @@ export const Guns = new InventoryItemDefinitions<GunDefinition>(([
                 length: 0.5,
                 color: 0xFF0000,
                 saturatedColor: 0xF55C3D
+            }
+        }
+    },
+    {
+        idString: "aa12",
+        name: "AA-12",
+        itemType: ItemType.Gun,
+        ammoType: "12g",
+        ammoSpawnAmount: 15,
+        capacity: 20,
+        extendedCapacity: 30,
+        reloadTime: 4,
+        fireDelay: 200,
+        switchDelay: 400,
+        speedMultiplier: 1,
+        recoilMultiplier: 0.5,
+        recoilDuration: 600,
+        fireMode: FireMode.Auto,
+        bulletCount: 18,
+        shotSpread: 18,
+        moveSpread: 22,
+        jitterRadius: 1.75,
+        length: 7.4,
+        fists: {
+            left: Vec.create(95, -1),
+            right: Vec.create(40, 0),
+            rightZIndex: 4,
+            animationDuration: 100
+        },
+        image: { position: Vec.create(75, 2) },
+        casingParticles: [{
+            frame: "casing_12ga_bird",
+            position: Vec.create(4, 0.6)
+        }],
+        gasParticles: gasParticlePresets.shotgun,
+        ballistics: {
+            damage: 4,
+            obstacleMultiplier: 1,
+            speed: 0.12,
+            range: 40,
+            tracer: {
+                length: 0.5
+            }
+        }
+    },
+    {
+        idString: "ks23m",
+        name: "KS-23M",
+        itemType: ItemType.Gun,
+        ammoType: "4g",
+        ammoSpawnAmount: 15,
+        capacity: 4,
+        extendedCapacity: 6,
+        reloadTime: 0.9,
+        fireDelay: 1200,
+        switchDelay: 1000,
+        speedMultiplier: 1,
+        recoilMultiplier: 0.4,
+        recoilDuration: 700,
+        fireMode: FireMode.Single,
+        shotSpread: 12,
+        moveSpread: 15,
+        jitterRadius: 1.3,
+        bulletCount: 8,
+        length: 7.85,
+        fists: {
+            left: Vec.create(114, -3),
+            right: Vec.create(45, 0),
+            rightZIndex: 4,
+            animationDuration: 100
+        },
+        image: { position: Vec.create(89, 0) },
+        casingParticles: [{
+            position: Vec.create(4, 0.6),
+            ejectionDelay: 450,
+            velocity: {
+                y: {
+                    min: 2,
+                    max: 5,
+                    randomSign: true
+                }
+            }
+        }],
+        gasParticles: gasParticlePresets.shotgun,
+        shotsPerReload: 1,
+        ballistics: {
+            damage: 20,
+            obstacleMultiplier: 2,
+            speed: 0.16,
+            range: 56,
+            tracer: {
+                length: 0.7,
+                width: 1.15
             }
         }
     },
